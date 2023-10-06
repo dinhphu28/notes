@@ -186,3 +186,10 @@ s to open file split vertical
 i to open file split horizontal
 
 Ctrl + w to switch split windows when in normal mode
+
+I (Shift + i) to toggle hidden files in the Nerd Tree, or set variable as below
+
+```vim
+let: NERDTreeShowHidden=1
+```
+
