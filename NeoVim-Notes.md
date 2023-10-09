@@ -193,3 +193,6 @@ I (Shift + i) to toggle hidden files in the Nerd Tree, or set variable as below
 let: NERDTreeShowHidden=1
 ```
 
+### Comment toggle
+
+gcc to toggle comment current line or selected line
