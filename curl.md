@@ -153,6 +153,18 @@ curl --cacert ca-bundle.pem https://example.com
 
 
 
+### Using HTTP Proxy
+
+Use flag `-x` or `--proxy`
+
+```sh
+curl -x "http://proxy.example.com:80" -X GET 'https://www.example.com/resources'
+```
+
+
+
+
+
 ### GET
 
 Insomnia style
