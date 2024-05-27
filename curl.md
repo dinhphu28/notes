@@ -245,3 +245,5 @@ curl -X POST 'http://localhost:8080/articles' \
 Other methods are similar
 
 > Note that `-d` or `--data` is implicit POST method, `-I` for HEAD. To specify method, you can use `--request` or `-X` followed by method Name
+
+### Formatting
