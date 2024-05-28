@@ -247,3 +247,19 @@ Other methods are similar
 > Note that `-d` or `--data` is implicit POST method, `-I` for HEAD. To specify method, you can use `--request` or `-X` followed by method Name
 
 ### Formatting
+
+To write `verbose` to 1 file and `response-payload` to another but still print out the result:
+
+```sh
+curl -X GET \
+  'https://www.example.com/resources' \
+  -H "Authorization: $TOKEN" \
+  -v 2> >(tee verbose.log >&2) | awk 'END{print}' | tee response-payload.json | jq
+```
+
+Then when we want to re-print the result with these file:
+
+```sh
+cat verbose.log >&2; cat response-payload.json  | jq
+```
+
