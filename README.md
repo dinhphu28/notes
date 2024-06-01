@@ -4,4 +4,4 @@ Note some tips
 
 - curl
 - neovim
-- some scripts
+- some shell scripts
