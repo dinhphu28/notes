@@ -5,4 +5,4 @@ Note some tips
 - curl
 - neovim
 - some shell scripts
-- 'open' command
+- 'open' command (KDE Plasma)
