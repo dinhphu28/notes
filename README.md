@@ -6,3 +6,6 @@ Note some tips
 - neovim
 - some shell scripts
 - 'open' command (KDE Plasma)
+
+---
+24-06-05
