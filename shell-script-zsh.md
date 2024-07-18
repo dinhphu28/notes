@@ -54,3 +54,59 @@ echo $password
 ```
 
 > Remember to `unset password` for security
+
+---
+
+### CURL with parallel
+
+#### Use `xargs`
+
+```sh
+#!/bin/bash
+ids=("340935" "340134")
+
+fetch_resource() {
+	id=$1
+	curl -X 'GET' "http://example.com/resources/$id" \
+		-H 'X-API-KEY: api-key-1234' | jq
+}
+
+export -f fetch_template
+
+printf "%s\n" "${ids[@]}" | xargs -P 12 -I {} bash -c 'fetch_resource "$@"' _ {}
+
+```
+
+#### Use jobs
+
+```sh
+#!/bin/bash
+ids=("340935" "340134")
+
+# Function to make the curl request
+fetch_resource() {
+	id=$1
+	response=$(curl -X GET "http://example.com/resources/$id" \
+		-H 'X-API-KEY: api-key-1234')
+	echo "$response" | jq | tee "output/resource_$id.json" | jq
+}
+
+# Limit for parallel jobs
+parallel_limit=12
+job_count=0
+
+for id in "${ids[@]}"; do
+	fetch_resource "$id" &
+	job_count=$((job_count + 1))
+
+	if ((job_count >= parallel_limit)); then
+		wait -n
+		job_count=$((job_count - 1))
+	fi
+done
+
+# Wait for all remaining jobs to finish
+wait
+
+```
+
