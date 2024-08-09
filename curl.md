@@ -189,7 +189,29 @@ curl -X 'http://localhost:8080/articles' \
 	-H 'x-api-key: apikey123'
 ```
 
+##### Notice
 
+When using query string
+
+Method 1:
+
+```sh
+curl -X GET -G 'http://localhost:8080/articles' \
+	--data-urlencode 'page=1' \
+	--data-urlencode 'limit=10'
+	-H 'x-api-key: apikey123'
+```
+
+> With `-G`, `--data-urlencode` (or `-d` , `--data`, `--data-binary`) will be appended to the URL as a query string
+
+Method 2:
+
+```sh
+curl -X GET 'http://localhost:8080/articles' \
+	--url-query 'page=1' \
+	--url-query 'limit=10'
+	-H 'x-api-key: apikey123'
+```
 
 ### POST
 
