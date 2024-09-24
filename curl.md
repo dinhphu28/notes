@@ -161,7 +161,9 @@ Use flag `-x` or `--proxy`
 curl -x "http://proxy.example.com:80" -X GET 'https://www.example.com/resources'
 ```
 
-
+```sh
+curl -x "socks5://proxy.example.com:1080" -X GET 'https://www.example.com/resources'
+```
 
 
 
