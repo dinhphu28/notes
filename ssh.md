@@ -15,14 +15,11 @@ Match User phund30
         AuthorizedKeysFile /etc/ssh/authorized-keys/%u
 ```
 
-Then
+Then add ssh pubkey to file `/etc/ssh/authorized-keys/myuser01`
+
+Restart sshd daemon
 
 ```sh
-sudo mkdir -p /etc/ssh/authorized-keys/myuser01
-sudo rmdir /etc/ssh/authorized-keys/myuser01
-touch /etc/ssh/authorized-keys/myuser01
-sudo touch /etc/ssh/authorized-keys/myuser01
-sudo nvim /etc/ssh/authorized-keys/myuser01
 sudo systemctl restart ssh
 ```
 
