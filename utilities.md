@@ -27,3 +27,14 @@ Because Linux have `/dev/random` & `/dev/urandom`, we can use them to generate r
 > We can use `/dev/random` for stronger security
 
 For more, read man page of `tr`
+
+### Unlock Desktop Session via CLI (SSH)
+
+> Note that I've just done on openSUSE Tumbleweed with KDE Plasma 6 (Wayland)
+
+```sh
+loginctl list-sessions
+loginctl unlock-session 3 # With 3 is your desktop session, it can be another
+loginctl lock-session 3
+```
+
