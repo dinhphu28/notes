@@ -1,6 +1,8 @@
 # Utilities
 
-### Password generation with Linux
+### Password generation
+
+#### Linux
 
 Because Linux have `/dev/random` & `/dev/urandom`, we can use them to generate ramdom password.
 
@@ -28,9 +30,31 @@ Because Linux have `/dev/random` & `/dev/urandom`, we can use them to generate r
 
 For more, read man page of `tr`
 
+#### macOS
+
+With macOS, an error occur when run below command because of UTF-8. To fix it, add LC_ALL=C as below:
+
+```sh
+< /dev/urandom LC_ALL=C tr -dc '[:print:]' | head -c32; echo
+```
+
+##### Other tools
+
+```sh
+openssl rand -base64 32
+```
+
+```sh
+date | md5
+```
+
+```sh
+gpg --gen-random 1 32
+```
+
 ### Unlock Desktop Session via CLI (SSH)
 
-> Note that I've just done on openSUSE Tumbleweed with KDE Plasma 6 (Wayland)
+> Note that I've just done on openSUSE Tumbleweed with KDE Plasma 6 (Wayland & X11)
 
 ```sh
 loginctl list-sessions
