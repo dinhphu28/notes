@@ -197,6 +197,11 @@ let: NERDTreeShowHidden=1
 
 gcc to toggle comment current line or selected line
 
+### Fold
+
+- Set local: `:setlocal foldmethod=syntax`
+- Autocmd: `autocmd FileType c setlocal foldmethod=syntax`
+
 ---
 
 # Some special character
