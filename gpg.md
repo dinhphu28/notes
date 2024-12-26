@@ -22,3 +22,9 @@ gpg-agent --daemon --use-standard-socket
 gpg-connect-agent reloadagent /bye
 ```
 
+In case agent not response
+
+```sh
+gpg-agent --daemon --use-standard-socket
+```
+
