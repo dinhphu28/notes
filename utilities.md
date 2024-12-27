@@ -90,3 +90,14 @@ xxd -r -p combined.hex combined.jpg
 #### OR can use GUI `OpenStego`
 
 https://github.com/syvaidya/openstego
+
+### Sync file to cloud
+
+Using `rclone`
+
+E.g:
+
+```sh
+rclone copy "$LOCAL_PATH" "$REMOTE_DIR" --progress
+```
+
