@@ -101,3 +101,9 @@ E.g:
 rclone copy "$LOCAL_PATH" "$REMOTE_DIR" --progress
 ```
 
+### Create random bytes file
+
+```sh
+dd if=/dev/urandom of=random.key bs=99K count=3
+```
+
