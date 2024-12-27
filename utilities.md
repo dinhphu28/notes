@@ -62,3 +62,31 @@ loginctl unlock-session 3 # With 3 is your desktop session, it can be another
 loginctl lock-session 3
 ```
 
+### Hide content in an image
+
+#### With `steghide`
+
+```sh
+steghide embed -cf image.jpg -ef secret.txt
+steghide extract -sf image.jpg
+```
+
+#### With `cat`
+
+```sh
+cat image.jpg secret.txt > combined.jpg
+tail -c <size_of_secret.txt> combined.jpg > recovered.txt
+```
+
+#### With `xxd`
+
+```sh
+xxd -p image.jpg > image.hex
+xxd -p secret.txt > secret.hex
+cat image.hex secret.hex > combined.hex
+xxd -r -p combined.hex combined.jpg
+```
+
+#### OR can use GUI `OpenStego`
+
+https://github.com/syvaidya/openstego
