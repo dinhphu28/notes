@@ -46,6 +46,7 @@ Add these line to client_01.ovpn file:
 - Ignore push DNS
 
 > dhcp-option PROXY_HTTP 10.8.0.1 7082
+> 
 > dhcp-option PROXY_HTTPS 10.8.0.1 7082
 
 Setup HTTP Proxy when connect.
