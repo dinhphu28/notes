@@ -34,8 +34,11 @@ The first line to assign static IP address 10.8.0.22 via gateway 10.8.0.21 to cl
 Add these line to client_01.ovpn file:
 
 > route 10.8.0.0 255.255.255.0
+> 
 > route 192.168.169.0 255.255.255.0
+> 
 > pull-filter ignore "redirect-gateway"
+> 
 > pull-filter ignore "dhcp-option DNS"
 
 - Add route to 10.8.0.0 & 192.168.169.0
