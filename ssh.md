@@ -25,6 +25,20 @@ sudo systemctl restart ssh
 
 ## Setup SSH Tunneling (Remote) in Linux Systemd
 
+Before, enable GatewayPorts in `/etc/ssh/sshd_config`
+
+```properties
+GatewayPorts yes
+```
+
+or
+
+```properties
+GatewayPorts clientspecified
+```
+
+Let get started
+
 > Using user `phund30` has been created before.
 
 ### Create config
