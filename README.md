@@ -8,4 +8,4 @@ Note some tips
 - 'open' command (KDE Plasma)
 
 ---
-25-12-12
+26-10-26
